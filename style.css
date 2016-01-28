@@ -1,0 +1,203 @@
+html
+{
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: #eee;
+}
+
+*, *:before, *:after
+{
+	box-sizing: inherit;
+}
+
+html, body
+{
+	background: #151515;
+}
+
+
+.controls
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4em;
+	padding: 0.5em;
+
+	z-index: 1000;
+
+	background: #333;
+	box-shadow: 0 0.1em 1em 0.1em rgba(0,0,0,0.5);
+}
+
+.selector
+{
+	position: relative;
+	width: 10em;
+	height: 100%;
+	float: left;
+
+	border-radius: 0.1em;
+	background: #444;
+
+	transition: all 200ms;
+
+	text-align: center;
+}
+
+.selector:hover
+{
+	background: #555;
+}
+
+.selector span
+{
+	position: relative;
+	line-height: 3em;
+	vertical-align: middle;
+}
+
+.selector input
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.buttons 
+{
+	height: 100%;
+	float: right;
+}
+
+.buttons a
+{
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+	font-size: 1.5em;
+	width: 2em;
+	line-height: 2em;
+	text-align: center;
+	background: #444;
+
+	border-radius: 0.1em;
+	transition: all 200ms;
+}
+
+.buttons a:hover
+{
+	background: #555;
+}
+
+a.calc
+{
+	background: #1893F1;
+}
+
+a.calc:hover
+{
+	background: #3EA4F2;
+}
+
+.buttons .separator
+{
+	margin: 0 0.5em;
+}
+
+.display
+{
+	text-align: center;
+	position: relative;
+	margin: 2.5em;
+	margin-top: 7em;
+	/*margin-bottom: 30em;*/
+}
+
+.displayer
+{
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	box-shadow: -0.5em 0.5em 0.3em 0.1em rgba(0, 0, 0, 0.4);
+}
+
+.box
+{
+	position: absolute;
+	background: rgba(0, 0, 0, 0.3);
+	border: 2px dashed rgba(255, 255, 255, 0.4);
+	pointer-events: none;
+
+	transition: background 100ms;
+}
+
+.box.evented
+{
+	pointer-events: auto;
+}
+
+.box.evented:hover
+{
+	background: rgba(0, 150, 255, 0.3);
+}
+
+.box.selected, .box.selected:hover
+{
+	background: rgba(255, 20, 0, 0.3);
+}
+
+.ghost
+{
+	cursor: crosshair;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.result
+{
+	background: #333;
+	position: fixed;
+	height: 10em;
+	width: 10em;
+	bottom: 1em;
+	right: 1em;
+	border-radius: 0.5em;
+	padding: 1.5em;
+}
+
+.result .percentage
+{
+	color: #eee;
+	position: absolute;
+	width: 4em;
+	text-align: center;
+	height: 1em;
+	font-size: 1.3em;
+	font-weight: bold;
+	top:0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+.result canvas
+{
+	width: 100%;
+	height: 100%;
+}
+
+.spacer
+{
+	width: 100%;
+	height: 30em;
+}

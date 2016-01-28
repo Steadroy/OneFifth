@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OneFifth</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section class="controls">
+		<div class="selector">
+			<span class="selector-text">
+				<i class="fa fa-folder-open"></i>
+				Select File
+			</span>
+			<input type="file" id="selection">
+		</div>
+		<div class="buttons">
+			<a href="#" class="draw disabled"><i class="fa fa-pencil"></i></a>
+			<a href="#" class="select"><i class="fa fa-mouse-pointer"></i></a>
+
+			<span class="separator"></span>
+
+			<a href="#" class="clear"><i class="fa fa-ban"></i></a>
+			<a href="#" class="delete disabled"><i class="fa fa-trash"></i></a>
+
+			<span class="separator"></span>
+
+			<a href="#" class="calc"><i class="fa fa-calculator"></i></a>
+		</div>
+	</section>
+	<section class="display">
+		<div class="ghost" id="ghost">
+			
+		</div>
+	</section>
+	<section class="result">
+		<span class="percentage">0%</span>
+		<canvas id="chart"></canvas>
+	</section>
+	<section class="spacer">
+		
+	</section>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="calculate.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
