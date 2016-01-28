@@ -23,19 +23,27 @@ function calculate (image, boxes) {
 		for (var j = i+1; j < boxes.length; j++) {
 			var box_b = boxes[j];
 
+			var ver_sort = [box_a, box_b];
+			ver_sort.sort(function (a, b) {
+				return a.y - b.y;
+			});
+
+			var ver_a = ver_sort[0];
+			var ver_b = ver_sort[1];
+
 			// Check for overlap
-			if ((box_b.x < (box_a.x + box_a.width)) && (box_b.y < (box_a.y + box_a.height))) {
+			if ((box_b.x < (box_a.x + box_a.width)) && (ver_b.y < (ver_a.y + ver_a.height))) {
 				console.log('overlap');
 				console.log(box_a, box_b);
 
 				var d_width = box_a.x + box_a.width - box_b.x;
-				var d_height = box_a.y + box_a.height - box_b.y;
+				var d_height = ver_a.y + ver_a.height - ver_b.y;
 
 				if (box_b.x + d_width > box_b.x + box_b.width) {
 					d_width = box_b.width;
 				}
 
-				if (box_b.y + d_height > box_b.y + box_b.height) {
+				if (ver_b.y + d_height > ver_b.y + ver_b.height) {
 					d_height = box_b.height;
 				}
 
