@@ -99,20 +99,33 @@ $(function(){
 
 	var evented = false;
 	var selected = null;
+	var clicked = false;
 
-	Mousetrap.bind(['ctrl', 'command'], function (e) {
+	var evented_action = function (e) {
 		if (!evented) {
 			evented = true;
 			$('.box').addClass('evented');
+			clicked = false;
 		}
-	}, 'keydown');
+	};
 
-	Mousetrap.bind(['ctrl', 'command'], function (e) {
+	var unevented_action = function (e) {
 		if (evented) {
 			evented = false;
 			$('.box').removeClass('evented');
+			clicked = false;
 		}
-	}, 'keyup');
+	};
+
+	Mousetrap.bind(['ctrl', 'command'], evented_action, 'keydown');
+	Mousetrap.bind(['ctrl', 'command'], unevented_action, 'keyup');
+
+	$('a.select').click(function (e) {
+		evented_action(e);
+		clicked = true;
+	});
+
+	$('a.draw').click(unevented_action);
 
 	var del_action = function (e) {
 		if (selected) {
@@ -123,7 +136,13 @@ $(function(){
 
 	Mousetrap.bind('del', del_action);
 
-	display.on('click', '.box', function () {
+	display.on('click', '.box', function (e) {
+
+		if (clicked) {
+			unevented_action(e);
+		}
+
+		$('.box').removeClass('selected');
 		selected = $(this);
 		selected.addClass('selected');
 	});

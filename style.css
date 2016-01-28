@@ -1,203 +1,231 @@
 html
 {
-	box-sizing: border-box;
-	font-family: sans-serif;
-	color: #eee;
+    font-family: sans-serif;
+
+    box-sizing: border-box;
+
+    color: #eee;
 }
 
-*, *:before, *:after
+*,
+*:before,
+*:after
 {
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
-html, body
+html,
+body
 {
-	background: #151515;
+    background: #151515;
 }
 
 
 .controls
 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 4em;
-	padding: 0.5em;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 
-	z-index: 1000;
+    width: 100%;
+    height: 4em;
+    padding: .5em;
 
-	background: #333;
-	box-shadow: 0 0.1em 1em 0.1em rgba(0,0,0,0.5);
+    background: #333;
+    box-shadow: 0 .1em 1em .1em rgba(0,0,0,.5);
 }
 
 .selector
 {
-	position: relative;
-	width: 10em;
-	height: 100%;
-	float: left;
+    position: relative;
 
-	border-radius: 0.1em;
-	background: #444;
+    float: left;
 
-	transition: all 200ms;
+    width: 10em;
+    height: 100%;
 
-	text-align: center;
+    transition: all 200ms;
+    text-align: center;
+
+    border-radius: .1em;
+    background: #444;
 }
 
 .selector:hover
 {
-	background: #555;
+    background: #555;
 }
 
 .selector span
 {
-	position: relative;
-	line-height: 3em;
-	vertical-align: middle;
+    line-height: 3em;
+
+    position: relative;
+
+    vertical-align: middle;
 }
 
 .selector input
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    opacity: 0;
 }
 
-.buttons 
+.buttons
 {
-	height: 100%;
-	float: right;
+    float: right;
+
+    height: 100%;
 }
 
 .buttons a
 {
-	text-decoration: none;
-	display: inline-block;
-	color: inherit;
-	font-size: 1.5em;
-	width: 2em;
-	line-height: 2em;
-	text-align: center;
-	background: #444;
+    font-size: 1.5em;
+    line-height: 2em;
 
-	border-radius: 0.1em;
-	transition: all 200ms;
+    display: inline-block;
+
+    width: 2em;
+
+    transition: all 200ms;
+    text-align: center;
+    text-decoration: none;
+
+    color: inherit;
+    border-radius: .1em;
+    background: #444;
 }
 
 .buttons a:hover
 {
-	background: #555;
+    background: #555;
 }
 
 a.calc
 {
-	background: #1893F1;
+    background: #1893f1;
 }
 
 a.calc:hover
 {
-	background: #3EA4F2;
+    background: #3ea4f2;
 }
 
 .buttons .separator
 {
-	margin: 0 0.5em;
+    margin: 0 .5em;
 }
 
 .display
 {
-	text-align: center;
-	position: relative;
-	margin: 2.5em;
-	margin-top: 7em;
-	/*margin-bottom: 30em;*/
+    position: relative;
+
+    margin: 2.5em;
+    margin-top: 7em;
+
+    text-align: center;
 }
 
 .displayer
 {
-	display: block;
-	margin: auto;
-	max-width: 100%;
-	box-shadow: -0.5em 0.5em 0.3em 0.1em rgba(0, 0, 0, 0.4);
+    display: block;
+
+    max-width: 100%;
+    margin: auto;
+
+    box-shadow: -.5em .5em .3em .1em rgba(0, 0, 0, .4);
 }
 
 .box
 {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.3);
-	border: 2px dashed rgba(255, 255, 255, 0.4);
-	pointer-events: none;
+    position: absolute;
 
-	transition: background 100ms;
+    transition: background 100ms;
+    pointer-events: none;
+
+    border: 2px dashed rgba(255, 255, 255, .4);
+    background: rgba(0, 0, 0, .3);
 }
 
 .box.evented
 {
-	pointer-events: auto;
+    pointer-events: auto;
 }
 
 .box.evented:hover
 {
-	background: rgba(0, 150, 255, 0.3);
+    background: rgba(0, 150, 255, .3);
 }
 
-.box.selected, .box.selected:hover
+.box.selected,
+.box.selected:hover
 {
-	background: rgba(255, 20, 0, 0.3);
+    background: rgba(255, 20, 0, .3);
 }
 
 .ghost
 {
-	cursor: crosshair;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: crosshair;
 }
 
 .result
 {
-	background: #333;
-	position: fixed;
-	height: 10em;
-	width: 10em;
-	bottom: 1em;
-	right: 1em;
-	border-radius: 0.5em;
-	padding: 1.5em;
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+
+    width: 10em;
+    height: 10em;
+    padding: 1.5em;
+
+    border-radius: .5em;
+    background: #333;
 }
 
 .result .percentage
 {
-	color: #eee;
-	position: absolute;
-	width: 4em;
-	text-align: center;
-	height: 1em;
-	font-size: 1.3em;
-	font-weight: bold;
-	top:0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
+    font-size: 1.3em;
+    font-weight: bold;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 4em;
+    height: 1em;
+    margin: auto;
+
+    text-align: center;
+
+    color: #eee;
 }
 
 .result canvas
 {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .spacer
 {
-	width: 100%;
-	height: 30em;
+    width: 100%;
+    height: 30em;
 }
